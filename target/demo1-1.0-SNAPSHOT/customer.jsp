@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -22,13 +22,16 @@
             <td>Date</td>
         </tr>
         <tr>
-            <c:forEach items='${requestScope["customer"]}'  var="item" varStatus="loop">
-                <td>${loop.index + 1}</td>
-                <td>${item.getName()}</td>
-                <td>${item.getPhone()}</td>
-                <td>${item.getAddress()}</td>
-                <td>${item.getDate()}</td>
-<%--                <td><img src="${item.getImg}" alt="${item.getName}"></td>--%>
+            <c:forEach items='${requestScope["customer"]}' var="item" varStatus="loop">
+        <tr>
+            <td>${loop.index + 1}</td>
+            <td>${item.getName()}</td>
+            <td>${item.getPhone()}</td>
+            <td>${item.getAddress()}</td>
+            <td>${item.getDate()}</td>
+        </tr>
+
+            <%--                <td><img src="${item.getImg}" alt="${item.getName}"></td>--%>
         </c:forEach>
         </tr>
     </table>
